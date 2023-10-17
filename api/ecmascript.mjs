@@ -14,6 +14,7 @@ function ECMAScript(el){
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
+    n.style.backgroundColor='rgba(0,0,0,0)';
   }
 
   };
