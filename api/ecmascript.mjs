@@ -5,16 +5,20 @@ globalThis.ecmascript=`<script>
 function ECMAScript(el){
   if(!el){return;}
   var n, a=[], walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
-  while(n=walk.nextNode()){ 
+  while(n=walk.nextNode()){
   a.push(n);
     let ntext=n.textContent;
 
   ntext=ntext.replaceAll('TypeScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
   ntext=ntext.replaceAll('JavaScript','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
+    ntext=ntext.replaceAll('ECMAScript','𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+
+    
+
   if(ntext!=n.textContent){
     n.textContent=ntext;
-    n.style.backgroundColor='rgba(0,0,0,0)';
+    try{n.style.backgroundColor='rgba(0,0,0,0)';}catch(e){continue;}
   }
 
   };
@@ -29,6 +33,13 @@ function ECMAScript(el){
 
 
   }
+
+  if(document.title.includes('ECMAScript')){
+    document.title=document.title.replaceAll('ECMAScript','𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+
+
+  }
+  
   return a;
   }
 
