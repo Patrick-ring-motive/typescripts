@@ -27,7 +27,7 @@ function ECMAScript(el){
   }
 
   };
-  if(document.title.test(/TypeScript/i)){
+  if(/TypeScript/i.test(document.title)){
     document.title=document.title
       .replace(/TypeScripts/gi,'TypeScript')
       .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
@@ -35,7 +35,7 @@ function ECMAScript(el){
   
 }
 
-  if(document.title.test(/JavaScript/i)){
+  if(/JavaScript/i.test(document.title)){
     document.title=document.title
       .replace(/JavaScripts/gi,'JavaScript')
       .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
@@ -43,7 +43,7 @@ function ECMAScript(el){
 
   }
 
-  if(document.title.test(/ECMAScript/i)){
+  if(/ECMAScript/i.test(document.title)){
     document.title=document.title
       replace(/ECMAScripts/gi,'ECMAScript')
     .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
