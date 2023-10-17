@@ -1,5 +1,4 @@
 
-
 globalThis.ecmascript=`<script>
 
 function ECMAScript(el){
@@ -9,10 +8,16 @@ function ECMAScript(el){
   a.push(n);
     let ntext=n.textContent;
 
-  ntext=ntext.replaceAll('TypeScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
-  ntext=ntext.replaceAll('JavaScript','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  ntext=ntext
+    .replace(/TypeScripts/gi,'TypeScript')
+    .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  ntext=ntext
+    .replace(/JavaScripts/gi,'JavaScript')
+    .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
-    ntext=ntext.replaceAll('ECMAScript','𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+    ntext=ntext
+      .replace(/ECMAScripts/gi,'ECMAScript')
+      .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
     
 
@@ -22,20 +27,26 @@ function ECMAScript(el){
   }
 
   };
-  if(document.title.includes('TypeScript')){
-    document.title=document.title.replaceAll('TypeScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  if(document.title.test(/TypeScript/i)){
+    document.title=document.title
+      .replace(/TypeScripts/gi,'TypeScript')
+      .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
   
 }
 
-  if(document.title.includes('JavaScript')){
-    document.title=document.title.replaceAll('JavaScript','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  if(document.title.test(/JavaScript/i)){
+    document.title=document.title
+      .replace(/JavaScripts/gi,'JavaScript')
+      .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
 
   }
 
-  if(document.title.includes('ECMAScript')){
-    document.title=document.title.replaceAll('ECMAScript','𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  if(document.title.test(/ECMAScript/i)){
+    document.title=document.title
+      replace(/ECMAScripts/gi,'ECMAScript')
+    .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
 
   }
