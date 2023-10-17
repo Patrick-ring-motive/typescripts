@@ -9,8 +9,8 @@ function ECMAScript(el){
   a.push(n);
     let ntext=n.textContent;
 
-  ntext=ntext.replaceAll('TypeScript','ТуреЅсrірtѕ');
-  ntext=ntext.replaceAll('JavaScript','ЈаvаЅсrірtѕ');
+  ntext=ntext.replaceAll('TypeScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+  ntext=ntext.replaceAll('JavaScript','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
@@ -18,13 +18,13 @@ function ECMAScript(el){
 
   };
   if(document.title.includes('TypeScript')){
-    document.title=document.title.replaceAll('TypeScript','ТуреЅсrірtѕ');
+    document.title=document.title.replaceAll('TypeScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
   
 }
 
   if(document.title.includes('JavaScript')){
-    document.title=document.title.replaceAll('JavaScript','ЈаvаЅсrірtѕ');
+    document.title=document.title.replaceAll('JavaScript','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
 
   }
