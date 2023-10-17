@@ -94,7 +94,7 @@ async function onRequest(req, res) {
         .replace('<head>', `<head>
         <style>.typescript-long>path{visibility:hidden;}.typescript-long::after{color:white;content:"TypeScript";}</style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
-                globalThis.ecmascript);
+                globalThis.ecmascript).replace('https://typescripts.org/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png');
       return res.end(resBody);
 
 
