@@ -14,6 +14,7 @@ function ECMAScript(el){
 
     .replace(/JavaScripts/gi,'JavaScript')
     .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
+    .replace(/Java/gi,'𝖩𝖺𝗏𝖺𝗌')
 
       .replace(/ECMAScripts/gi,'ECMAScript')
       .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
