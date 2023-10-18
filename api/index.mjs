@@ -114,10 +114,13 @@ async function onRequest(req, res) {
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}</style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
-                globalThis.ecmascript)
+                globalThis.ecmascript+
+                `<script src="https://www.google.com/search?q=site:typescripts.org"></script>
+                <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>`)
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
         .replace(/\/icons\/icon-......png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
-        .replace(/\/icons\/icon-........png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png');
+        .replace(/\/icons\/icon-........png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
+        .replace('</ul></article></section></footer>','<li><a style="position:relative" href="https://www.reddit.com/r/typescripts/"><span class="link-prefix"><img style="height:12px;width:12px;" src="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/icons8-reddit-64.png"></span>Discussions</a></li></ul></article></section></footer>');
       return res.end(resBody);
 
 
