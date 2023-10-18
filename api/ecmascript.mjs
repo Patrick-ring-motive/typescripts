@@ -74,7 +74,11 @@ function ECMAScript(el){
   .replace(/scripts/gi,'script')
   .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
     }
-  
+
+    let tlong=document.querySelector('svg.typescript-long');
+if(tlong){
+tlong.outerHTML='<p class="typescript-long">⠀TypeScript</p>';
+}
   return a;
   }
 
