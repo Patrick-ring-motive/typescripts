@@ -22,3 +22,22 @@ export function addCorsHeaders(res) {
   res.removeHeader('Cross-Origin-Opener-Policy');
   return res;
 }
+
+export function addCacheHeaders(res){
+  res.setHeader("CDN-Cache-Control",
+    "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+ );
+res.setHeader("Cache-Control",
+   "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+);
+res.setHeader( "Cloudflare-CDN-Cache-Control",
+    "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+);
+res.setHeader("Surrogate-Control",
+   "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+);
+res.setHeader("Vercel-CDN-Cache-Control",
+   "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+);
+  return res;
+}

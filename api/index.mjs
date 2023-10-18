@@ -3,7 +3,7 @@ import http from 'http';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './en.json.mjs';
-import { addCorsHeaders } from './cors-headers.mjs';
+import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
 
@@ -94,7 +94,7 @@ async function onRequest(req, res) {
     res.removeHeader('content-encoding');
     res.removeHeader('content-length');
     res=addCorsHeaders(res);
-
+    res=addCacheHeaders(res);
     /* copy over response headers  */
 
     res.headers = response.headers;
