@@ -1,5 +1,5 @@
 
-globalThis.ecmascript=`<script>
+//globalThis.ecmascript=`<script>
 
 function ECMAScript(el){
   if(!el){return;}
@@ -23,6 +23,11 @@ function ECMAScript(el){
 
     .replaceAll('<script','<𝗌𝖼𝗋𝗂𝗉𝗍')
     .replaceAll('</script','</𝗌𝖼𝗋𝗂𝗉𝗍')
+    
+    .replaceAll('scripting','𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗇𝗀')
+    .replaceAll('Scripting','S𝖼𝗋𝗂𝗉𝗍𝗂𝗇𝗀')
+    .replaceAll('scripted','𝗌𝖼𝗋𝗂𝗉𝗍𝖾𝖽')
+    .replaceAll('Scripted','S𝖼𝗋𝗂𝗉𝗍𝖾𝖽')
     
     .replace(/scripts/g,'script')
     .replace(/script/g,'𝗌𝖼𝗋𝗂𝗉𝗍𝗌')
