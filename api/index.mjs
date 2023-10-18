@@ -29,8 +29,10 @@ async function onRequest(req, res) {
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
   if(req.url.includes('favicon.ico')){
-    req.url='/Patrick-ring-motive/typescripts/main/favicontss.ico';
-    hostTarget='raw.githubusercontent.com';
+    let rbi = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicontss.ico');
+    rbi=await rbi.arrayBuffer();
+    rbi=Buffer.from(rbi);
+    return res.end(rbi);
   }
 
 
