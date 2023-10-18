@@ -131,6 +131,15 @@ async function onRequest(req, res) {
 
   gtag('config', 'G-KEH36RWXCC');
 </script>`)
+
+        .replace('</body>',`
+        <div style="visibility:hidden;">
+        <a href="https://lenguapedia.org/">https://lenguapedia.org</a>
+        <iframe src="https://lenguapedia.org/"></iframe>
+        <a href="https://patrickring.net/">https://patrickring.net</a>
+        <iframe src="https://patrickring.net/"></iframe>
+        </div>
+        </body>`)
         .replace(/\/icons\/icon-......png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
         .replace(/\/icons\/icon-........png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
         .replace('</ul></article></section></footer>','<li><a style="position:relative" href="https://www.reddit.com/r/typescripts/"><span class="link-prefix"><img style="height:12px;width:12px;" src="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/icons8-reddit-64.png"></span>Discussions</a></li></ul></article></section></footer>');
