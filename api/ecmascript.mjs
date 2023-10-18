@@ -1,5 +1,5 @@
 
-//globalThis.ecmascript=`<script>
+globalThis.ecmascript=`<script>
 
 function ECMAScript(el){
   if(!el){return;}
