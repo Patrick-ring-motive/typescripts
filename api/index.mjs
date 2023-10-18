@@ -17,7 +17,7 @@ let skipHeaders=['content-length','content-encoding'];
 
 async function onRequest(req, res) {
   try{
-  if(req.url.includes('ico')||req.url.includes('png')||req.url.includes('svg'))
+  //if(req.url.includes('ico')||req.url.includes('png')||req.url.includes('svg'))
  // console.log(req.url);
   let localhost = req.headers['Host'];
   
