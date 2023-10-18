@@ -3,6 +3,7 @@ import http from 'http';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './en.json.mjs';
+import { addCorsHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
 
@@ -15,7 +16,9 @@ http.createServer(onRequest).listen(3000);
 let skipHeaders=['content-length','content-encoding'];
 
 async function onRequest(req, res) {
- /* console.log(req.url)*/
+  try{
+  if(req.url.includes('ico')||req.url.includes('png')||req.url.includes('svg'))
+  console.log(req.url);
   let localhost = req.headers['Host'];
   
   if (req.url == '/ping') {
@@ -70,12 +73,21 @@ async function onRequest(req, res) {
     /* fetch from your desired target */
     let response = await fetch('https://' + hostTarget + path, options);
 
-    /* if there is a problem try redirecting to the original */
-    if (response.status > 399) {
-      res.setHeader('location', 'https://' + hostTarget + path);
-      res.statusCode = 302;
-      return res.end();
+    for (let [key, value] of response.headers.entries()) {
+      res.setHeader(key, value);
     }
+    for (let [key, value] of response.headers.keys()) {
+      try {
+        if (key.length > 1) {
+          res.removeHeader(key);
+          res.setHeader(key, value);
+        }
+      } catch (e) { continue; }
+    }
+
+    res.removeHeader('content-encoding');
+    res.removeHeader('content-length');
+    res=addCorsHeaders(res);
 
     /* copy over response headers  */
 
@@ -94,7 +106,7 @@ async function onRequest(req, res) {
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
-        <style>.typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}</style>
+        <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}</style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript)
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
@@ -106,12 +118,17 @@ async function onRequest(req, res) {
     } else {
 
       /* if not a text response then redirect straight to target */
-      res.setHeader('location', 'https://' + hostTarget + path);
-      res.statusCode = 302;
-      return res.end();
+     let rb = Buffer.from(await response.arrayBuffer())
+      return res.end(rb);
 
     }
 
 
+  }catch(e){
 
+    res.statusCode=500;
+    res.status=e.message;
+    res.end(e);
+    
+  }
 }

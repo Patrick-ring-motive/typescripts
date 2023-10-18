@@ -12,7 +12,7 @@ if(!globalThis.hostTargetList){
 
 
 try{
-  document.firstElementChild.style.filter='hue-rotate(45deg)';
+
 
    }catch(e){}
 window.addEventListener("DOMContentLoaded", (event) => {try{
