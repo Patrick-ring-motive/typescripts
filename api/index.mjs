@@ -28,7 +28,11 @@ async function onRequest(req, res) {
   if(req.url.startsWith('/_root/')){req.url=req.url.replace('/_root/','/');}
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
-  req.url=req.url.replace('index.json','en.json');
+  if(req.url.includes('favicon.ico')){
+    req.url='/Patrick-ring-motive/typescripts/main/favicontss.ico';
+    hostTarget='raw.githubusercontent.com';
+  }
+
 
 
   let path = req.url.replace('*', '');
