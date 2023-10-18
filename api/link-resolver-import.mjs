@@ -4,7 +4,7 @@ globalThis['link-resolver-import']=`<script>
 
 
 if(!globalThis.hostTargetList){
-  globalThis.hostTargetList = ['nodejs.org'];
+  globalThis.hostTargetList = ['www.typescriptlang.org',''typescriptlang.org''];
 
 }
 
