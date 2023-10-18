@@ -37,7 +37,9 @@ function ECMAScript(el){
     .replace(/SCRIPTS/g,'SCRIPT')
     .replace(/SCRIPT/g,'𝖲𝖢𝖱𝖨𝖯𝖳𝖲')
     .replace(/scripts/gi,'script')
-    .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+    .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
+    
+    /*.replace(/microsoft/gi,'Macrohard')*/;
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
@@ -74,7 +76,10 @@ function ECMAScript(el){
   .replace(/scripts/gi,'script')
   .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
     }
-
+  if(/microsoft/i.test(document.title)){
+    document.title=document.title
+  .replace(/microsoft/gi,'Macrohard');
+  }
     let tlong=document.querySelector('svg.typescript-long');
 if(tlong){
 tlong.outerHTML='<p class="typescript-long">⠀TypeScript</p>';
