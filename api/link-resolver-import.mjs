@@ -202,7 +202,7 @@ if(!document.querySelector('[id="discussions"]')){
 let d = document.createElement('li');
   d.id="discussions";
   d.innerHTML='<a style="position:relative" href="https://www.reddit.com/r/typescripts/"><span class="link-prefix"><img style="height:12px;width:12px;" src="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/icons8-reddit-64.png"></span>Discussions</a>'
-document.querySelector('footer>section>article[id="community-links"]>ul').appendChild(d);
+document.querySelector('footer>section>article[id="community-links"]>ul')?.appendChild?.(d);
   
 }
   
