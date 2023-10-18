@@ -1,5 +1,5 @@
 
-globalThis.ecmascript=`<script>
+//globalThis.ecmascript=`<script>
 
 function ECMAScript(el){
   if(!el){return;}
@@ -10,16 +10,28 @@ function ECMAScript(el){
 
   ntext=ntext
     .replace(/TypeScripts/gi,'TypeScript')
-    .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
-  ntext=ntext
+    .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
+
     .replace(/JavaScripts/gi,'JavaScript')
-    .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+    .replace(/JavaScript/gi,'𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
 
-    ntext=ntext
       .replace(/ECMAScripts/gi,'ECMAScript')
-      .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+      .replace(/ECMAScript/gi,'𝖤𝖢𝖬𝖠𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
 
+    .replace(/SCRIPTION/g,'SCRIPTION')
+    .replace(/scription/g,'scrіptіon')
+
+    .replaceAll('<script','<𝗌𝖼𝗋𝗂𝗉𝗍')
+    .replaceAll('</script','</𝗌𝖼𝗋𝗂𝗉𝗍')
     
+    .replace(/scripts/g,'script')
+    .replace(/script/g,'𝗌𝖼𝗋𝗂𝗉𝗍𝗌')
+    .replace(/Scripts/g,'Script')
+    .replace(/Script/g,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
+    .replace(/SCRIPTS/g,'SCRIPT')
+    .replace(/SCRIPT/g,'𝖲𝖢𝖱𝖨𝖯𝖳𝖲')
+    .replace(/scripts/gi,'script')
+    .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
@@ -50,6 +62,12 @@ function ECMAScript(el){
 
 
   }
+
+    if(/Script/i.test(document.title)){
+      document.title=document.title
+  .replace(/scripts/gi,'script')
+  .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌');
+    }
   
   return a;
   }
