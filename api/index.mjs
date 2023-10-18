@@ -93,6 +93,7 @@ async function onRequest(req, res) {
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
+        <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>.typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}</style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript)
