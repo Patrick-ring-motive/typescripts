@@ -3,6 +3,7 @@ import http from 'http';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './en.json.mjs';
+import './sw.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
@@ -28,6 +29,14 @@ async function onRequest(req, res) {
   if(req.url.startsWith('/_root/')){req.url=req.url.replace('/_root/','/');}
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
+    if(req.url.includes('sw.js')){
+      res=addCorsHeaders(res);
+      res=addCacheHeaders(res);
+      res.setHeader('content-type','text/javascript');
+      return res.end(globalThis.sw);
+    }
+
+    
   if(req.url.includes('favicon.ico')){
     let rbi = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicontss.ico');
     rbi=await rbi.arrayBuffer();
@@ -115,7 +124,8 @@ async function onRequest(req, res) {
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}</style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
-                `<script src="https://www.google.com/search?q=site:typescripts.org"></script>
+                `<script src="/sw.js"></script>
+                <script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
                 <script src="https://www.bing.com/search?q=site%3Atypescripts.org"></script>
                 <script src="https://www.bing.com/search?q=site%3Awww.typescripts.org"></script>`)
@@ -134,10 +144,9 @@ async function onRequest(req, res) {
 
         .replace('</body>',`
         <div style="visibility:hidden;">
-        <a href="https://lenguapedia.org/">https://lenguapedia.org</a>
-        <iframe src="https://lenguapedia.org/"></iframe>
+        <a href="https://lenguapedia.org/">https://lenguapedia.org</a
         <a href="https://patrickring.net/">https://patrickring.net</a>
-        <iframe src="https://patrickring.net/"></iframe>
+       
         </div>
         </body>`)
         .replace(/\/icons\/icon-......png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')

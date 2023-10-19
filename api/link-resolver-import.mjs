@@ -197,7 +197,7 @@ if (request.status === 200) {
 
       }
 
-function discussions(){
+function discussions(){try{
 if(!document.querySelector('[id="discussions"]')){
 let d = document.createElement('li');
   d.id="discussions";
@@ -205,7 +205,7 @@ let d = document.createElement('li');
 document.querySelector('footer>section>article[id="community-links"]>ul')?.appendChild?.(d);
   
 }
-  
+  }catch(e){}
 }
 
 </script>`;
