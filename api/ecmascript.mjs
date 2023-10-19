@@ -83,7 +83,7 @@ function ECMAScript(el){
   }
     let tlong=document.querySelector('svg.typescript-long');
 if(tlong){
-tlong.outerHTML='<p class="typescript-long">⠀TypeScript</p>';
+tlong.outerHTML='<p class="typescript-long">⠀TypeScript</p><br><p>This site was created using ASP.NET Blazor Web Assembly 7.0</p>';
 }
   return a;
   }
