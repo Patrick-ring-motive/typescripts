@@ -101,7 +101,8 @@ async function onRequest(req, res) {
     res.removeHeader('content-encoding');
     res.removeHeader('content-length');
     res=addCorsHeaders(res);
-    res=addCacheHeaders(res);
+  //  res=addCacheHeaders(res);
+    
     /* copy over response headers  */
 
     res.headers = response.headers;
