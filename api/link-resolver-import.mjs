@@ -42,7 +42,7 @@ setInterval(function(){
   transformLinks('src');
   transformLinks('action');
 
-let anchors = document.querySelectorAll('a[href*="typescripts.org"]:not([clickable])');
+let anchors = document.querySelectorAll('a[href*="typescripts.org"]:not([clickable],.dropdown-toggle)');
 let anchors_length = anchors.length;
 for(let i=0;i<anchors_length;i++){try{
   anchors[i].addEventListener("click", (e) => {

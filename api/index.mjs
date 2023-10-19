@@ -3,6 +3,7 @@ import http from 'http';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './sw.mjs';
+import './day0.js';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
@@ -33,6 +34,7 @@ async function onRequest(req, res) {
       res.setHeader('content-type','text/javascript');
       return res.end(globalThis.sw);
     }*/
+
 
     
   if(req.url.includes('favicon.ico')){
@@ -125,6 +127,7 @@ async function onRequest(req, res) {
         </style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
+                 globalThis.day0+
                 `<script src="/sw.js"></script>
                 <script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
@@ -159,9 +162,13 @@ async function onRequest(req, res) {
     } else {
 
       /* if not a text response then redirect straight to target */
-     let rb = Buffer.from(await response.arrayBuffer())
+     let responseBuffer = await response.arrayBuffer()
+      try{
+     let rb = Buffer.from(responseBuffer);
       return res.end(rb);
-
+      }catch(e){
+        return res.end(''+responseBuffer);
+      }
     }
 
 
