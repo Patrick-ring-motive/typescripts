@@ -41,7 +41,7 @@ function ECMAScript(el){
     .replace(/scripts/gi,'script')
     .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
     
-    /*.replace(/microsoft/gi,'Macrohard')*/;
+    .replace('Made with ♥ in Redmond, Boston, SF & Dublin','Made with 🗿 in Austin');
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
