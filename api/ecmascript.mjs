@@ -9,6 +9,8 @@ function ECMAScript(el){
     let ntext=n.textContent;
 
   ntext=ntext
+
+  .replace(/microsoft/gi,'Megahard')
     .replace(/TypeScripts/gi,'TypeScript')
     .replace(/TypeScript/gi,'𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
 

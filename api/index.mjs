@@ -2,7 +2,6 @@ import fetch from 'node-fetch';
 import http from 'http';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
-import './en.json.mjs';
 import './sw.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
@@ -18,8 +17,7 @@ let skipHeaders=['content-length','content-encoding'];
 
 async function onRequest(req, res) {
   try{
-  //if(req.url.includes('ico')||req.url.includes('png')||req.url.includes('svg'))
- // console.log(req.url);
+  
   let localhost = req.headers['Host'];
   
   if (req.url == '/ping') {
@@ -29,12 +27,12 @@ async function onRequest(req, res) {
   if(req.url.startsWith('/_root/')){req.url=req.url.replace('/_root/','/');}
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
-    if(req.url.includes('sw.js')){
+  /*  if(req.url.includes('sw.js')){
       res=addCorsHeaders(res);
       res=addCacheHeaders(res);
       res.setHeader('content-type','text/javascript');
       return res.end(globalThis.sw);
-    }
+    }*/
 
     
   if(req.url.includes('favicon.ico')){
