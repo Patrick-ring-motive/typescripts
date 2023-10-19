@@ -1,4 +1,5 @@
 globalThis.day0 = `<script>
+
 setInterval(()=>{
   String.prototype.reverse=function(){return this.split("").reverse().join("");};
   String.prototype.replaceWith=function(oldString,newString){
@@ -14,7 +15,6 @@ setInterval(()=>{
     }
     return str;
   }
-
   function makeReplacements(str){
     return str.replace(/: [A-Za-z]+/g,': any')
     .replaceWith('string','any')
@@ -44,7 +44,6 @@ setInterval(()=>{
     lsp[i].setAttribute('lsp',makeReplacements(lsp[i].getAttribute('lsp')));
     lsp[i].setAttribute('stupid','reddit');
   }
-
 },100);
 
 
