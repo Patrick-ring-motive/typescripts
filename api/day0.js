@@ -1,6 +1,6 @@
 globalThis.day0 = `<script>
 setInterval(()=>{
-  
+  String.prototype.reverse=function(){return this.split("").reverse().join("");};
   String.prototype.replaceWith=function(oldString,newString){
     let str = this.replaceAll(' '+oldString+' ',' '+newString+' ');
     if(str.trim()==oldString){
@@ -8,6 +8,9 @@ setInterval(()=>{
     }
     if(str.trim().startsWith(oldString+" ")){
       str = str.replace(oldString,newString);
+    }
+    if(str.trim().endsWith(" "+oldString)){ 
+      str = str.reverse().replace(oldString.reverse(),newString.reverse()).reverse();
     }
     return str;
   }
