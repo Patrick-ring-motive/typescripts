@@ -6,6 +6,7 @@ import './sw.mjs';
 import './day0.js';
 import './cookies.html.mjs';
 import './typsafe.mjs';
+import './nutflix.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
@@ -120,6 +121,7 @@ async function onRequest(req, res) {
       /* Copy over target response and return */
       let resBody = await response.text();
       resBody = resBody
+        .replace('<h2>What is TypeScript?</h2>',globalThis.ligma)
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
