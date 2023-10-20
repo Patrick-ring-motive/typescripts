@@ -4,6 +4,7 @@ import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './sw.mjs';
 import './day0.js';
+import './cookies.html.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
@@ -128,6 +129,7 @@ async function onRequest(req, res) {
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
                  globalThis.day0+
+                 globalThis.cooky+
                 `<script src="/sw.js"></script>
                 <script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
