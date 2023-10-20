@@ -18,4 +18,4 @@ left: 0;
     }
   }
 </style>
-  <marquee><h1>java​script was never meant to be type safe</h1></marquee>`;
+  <marquee><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe</h1></marquee>`;
