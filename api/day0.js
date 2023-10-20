@@ -25,6 +25,8 @@ setInterval(()=>{
     .replaceWith('(number)','(any)')
     .replaceWith("'string'","'any'")
     .replaceWith("'number'","'any'")
+    .replaceWith('"string"','"any"')
+    .replaceWith('"number"','"any"')
     .replaceWith('===','=')
     .replaceWith('==','=')
     .replaceWith('!=','|=')
