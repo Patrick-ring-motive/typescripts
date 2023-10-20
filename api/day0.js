@@ -17,6 +17,8 @@ setInterval(()=>{
   }
   function makeReplacements(str){
     return str.replace(/: [A-Za-z]+/g,': any')
+    .replaceWith('orr','arr')
+    .replaceWith("'orr'","'arr'")
     .replaceWith('string','any')
     .replaceWith('number','any')
     .replaceWith('<string>','<any>')
