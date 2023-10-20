@@ -26,7 +26,7 @@ globalThis.ligma=\``+
 
 globalThis.ligma
 
-+`\;
++`\`;
 
 setInterval(function(){
 if(document.querySelector('a[href*="most-loved-dreaded-and-wanted"]')){
