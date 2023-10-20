@@ -19,3 +19,43 @@ globalThis.ligma=`<h2 id="tst">What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍�
     height: 30vmin;
     width: 30vmin;
 "></img></center><br><center>I can't imagine programming without it </center><br><center>-Svelte</center><br></div></div>`;
+
+globalThis.balls=`<script>
+
+globalThis.ligma=\`
+
+<h2 id="tst">What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌?</h2>
+<div class=" row"><div class=" col1"><center><img src="https://static.frontendmasters.com/assets/teachers/theprimeagen/thumb.webp" title="Deez Nuts" style="
+    border-radius: 1vmax;
+    filter: drop-shadow(2px 4px 6px black);
+    height: 30vmin;
+    width: 30vmin;
+"></img></center><br><center>TypeScript is blazingly fast </center><br><center>-Nutflix</center><br></div><div class=" col1"><center><img src="https://create.t3.gg/images/theo_300x300.webp" title="ligma balls" style="
+    border-radius: 1vmax;
+    filter: drop-shadow(2px 4px 6px black);
+    height: 30vmin;
+    width: 30vmin;
+"></img></center><br><center>The best crutches I've ever used </center><br><center>-Ligma</center><br></div><div class=" col1"><center><img src="https://pbs.twimg.com/profile_images/557940120184041473/bFyXy8Pu_400x400.jpeg" title="Svelter? I barely know her." style="
+    border-radius: 1vmax;
+    filter: drop-shadow(2px 4px 6px black);
+    height: 30vmin;
+    width: 30vmin;
+"></img></center><br><center>I can't imagine programming without it </center><br><center>-Svelte</center><br></div></div>
+
+\`
+
+setInterval(function(){
+
+if(document.querySelector('[id="tst"]'){return;}
+let b = document.querySelectorAll('h2');
+for(let i=0;i<b.length;i++){
+if(b[i].innerHTML=='What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌?'){
+b[i].outerHTML=globalThis.ligma;
+return;
+}
+
+}
+
+},100);
+
+</script>`;
