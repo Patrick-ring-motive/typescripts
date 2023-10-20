@@ -5,7 +5,7 @@ import './ecmascript.mjs';
 import './sw.mjs';
 import './day0.js';
 import './cookies.html.mjs';
-import './typsafe';
+import './typsafe.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
