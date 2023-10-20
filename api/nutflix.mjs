@@ -46,7 +46,7 @@ globalThis.ligma=\`
 
 setInterval(function(){
 
-if(document.querySelector('[id="ligma-balls"]'){return;}
+if(document.querySelector('[id="ligma-balls"]')){return;}
 let b = document.querySelectorAll('h2');
 for(let i=0;i<b.length;i++){
 if(b[i].innerHTML=='What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌?'){
