@@ -40,6 +40,8 @@ setInterval(()=>{
   if(!document?.body){return;}
   let node, walk = document.createTreeWalker( document.body, NodeFilter.SHOW_TEXT, null);
   while(node = walk.nextNode()){
+  if(node.parentElement.tagName=='SCRIPT'){continue;}
+  if(node.parentElement.tagName=='STYLE'){continue;}
     let nodeText = node.textContent;
     nodeText = makeReplacements(nodeText)
     if(nodeText!=node.textContent){
