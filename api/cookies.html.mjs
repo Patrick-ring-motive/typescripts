@@ -17,8 +17,8 @@ globalThis.cooky=`
 
 <div id="onetrust-consent-sdk" style="opacity:1;">
   <div id="onetrust-banner-sdk" class="otFlat bottom ot-wo-title vertical-align-content ot-fade-in" role="region" aria-label="Cookie banner">
-    <p id="onetrust-policy-text">    <button id="cookie-accept">Accept
-      </button>
+    <p id="onetrust-policy-text">   &nbsp;<button id="cookie-accept">Accept
+      </button>&nbsp;
       This site uses cookies and similar tracking technology. As disclosed in our Privacy Statement, we and our partners may collect personal information and other data. By continuing to use our website, you accept our  Privacy Statement and Terms of Service. 
   
     </p>
