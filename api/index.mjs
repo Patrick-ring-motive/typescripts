@@ -129,7 +129,7 @@ async function onRequest(req, res) {
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
                  globalThis.day0+
-                 globalThis.cooky+
+
                 `<script src="/sw.js"></script>
                 <script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
@@ -153,7 +153,8 @@ async function onRequest(req, res) {
         <a href="https://lenguapedia.org/">https://lenguapedia.org</a
         <a href="https://patrickring.net/">https://patrickring.net</a>
        
-        </div>
+        </div>`+
+        globalThis.cooky+`
         </body>`)
         .replace(/\/icons\/icon-......png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
         .replace(/\/icons\/icon-........png/g,'https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
