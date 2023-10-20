@@ -11,6 +11,7 @@ globalThis.cooky=`
     overflow-x: hidden;
     overflow-y: auto;
   color:black;
+  filter: drop-shadow(0 0 0.25rem black);
 }
 </style>
 
