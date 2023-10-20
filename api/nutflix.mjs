@@ -45,7 +45,9 @@ globalThis.ligma=\`
 \`
 
 setInterval(function(){
-
+if(document.querySelector('a[href*="most-loved-dreaded-and-wanted"]')){
+document.querySelector('a[href*="most-loved-dreaded-and-wanted"]').parentElement.innerHTML='TypeScript is truly one of the languages of all time.';
+}
 if(document.querySelector('[id="ligma-balls"]')){return;}
 let b = document.querySelectorAll('h2');
 for(let i=0;i<b.length;i++){
