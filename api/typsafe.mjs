@@ -7,7 +7,7 @@ top: 25vh;
 right: 0;
 left: 0;
   color:red;
-  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, sans-serif;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, monospace;
   }
   @keyframes blinker {
       69% {
