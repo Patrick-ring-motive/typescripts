@@ -3,7 +3,7 @@
 
 
 globalThis.ligma=`<h2 id="tst">What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌?</h2>
-<div class=" row" id="ligma-balls"><div class=" col1"><center><img src="https://static.frontendmasters.com/assets/teachers/theprimeagen/thumb.webp" title="Deez Nuts" style="
+<div class=" row"><div class=" col1"><center><img id="ligma-balls" src="https://static.frontendmasters.com/assets/teachers/theprimeagen/thumb.webp" title="Deez Nuts" style="
     border-radius: 1vmax;
     filter: drop-shadow(2px 4px 6px black);
     height: 30vmin;
@@ -25,7 +25,7 @@ globalThis.balls=`<script>
 globalThis.ligma=\`
 
 <h2 id="tst">What is 𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌?</h2>
-<div class=" row" id="ligma-balls"><div class=" col1"><center><img src="https://static.frontendmasters.com/assets/teachers/theprimeagen/thumb.webp" title="Deez Nuts" style="
+<div class=" row"><div class=" col1"><center><img id="ligma-balls" src="https://static.frontendmasters.com/assets/teachers/theprimeagen/thumb.webp" title="Deez Nuts" style="
     border-radius: 1vmax;
     filter: drop-shadow(2px 4px 6px black);
     height: 30vmin;
