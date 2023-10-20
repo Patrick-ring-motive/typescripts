@@ -19,7 +19,7 @@ globalThis.cooky=`
   <div id="onetrust-banner-sdk" class="otFlat bottom ot-wo-title vertical-align-content ot-fade-in" role="region" aria-label="Cookie banner">
     <p id="onetrust-policy-text">   &nbsp;<button id="cookie-accept">Accept
       </button>&nbsp;
-      This site uses cookies and similar tracking technology. As disclosed in our Piracy Statement, we and our partners may collect personal information and other data. By continuing to use our website, you accept our Piracy Statement and Terms of Servix.
+      This site uses cookies and similar tracking technology. As disclosed i​n our Piracy Statement, we and our partners may collect personal information and other data. By continuing to use our website, you accept our Piracy Statement and Terms of Servix.
     </p>
   </div>
 </div>
