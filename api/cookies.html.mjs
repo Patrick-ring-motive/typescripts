@@ -29,6 +29,10 @@ globalThis.cooky=`
 if(!sessionStorage.getItem('cookieop')){
 sessionStorage.setItem('cookieop','1');
 }
+
+document.querySelector('[id="onetrust-consent-sdk"]')
+.style.opacity=parseFloat(sessionStorage.getItem('cookieop'));
+
 document.querySelector('[id="cookie-accept"]').onclick=function(){
 let ckie = document.querySelector('[id="onetrust-consent-sdk"]');
 let ckieOpacity=parseFloat(sessionStorage.getItem('cookieop'));
