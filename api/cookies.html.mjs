@@ -25,9 +25,14 @@ globalThis.cooky=`
 </div>
 
 <script>
+
+if(!sessionStorage.getItem('cookieop')){
+sessionStorage.setItem('cookieop','1');
+}
 document.querySelector('[id="cookie-accept"]').onclick=function(){
 let ckie = document.querySelector('[id="onetrust-consent-sdk"]');
-let ckieOpacity=parseFloat(ckie.style.opacity);
+let ckieOpacity=parseFloat(sessionStorage.getItem('cookieop'));
   ckie.style.opacity=(ckieOpacity*0.9);
+  sessionStorage.setItem('cookieop',ckie.style.opacity);
 };
 </script>`;
