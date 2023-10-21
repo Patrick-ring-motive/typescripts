@@ -21,7 +21,7 @@ left: 0;
     }
   }
 </style>
-  <marquee><table><tr><td></td><td><button onclick="alert('Cannot read property \'target\' of undefined')">x</button></td></tr><tr><td><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe</h1></td><td></td></tr></table></marquee>
+  <marquee><table><tr><td></td><td><button onclick="alert('Cannot read property ’target’ of undefined')">x</button></td></tr><tr><td><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe</h1></td><td></td></tr></table></marquee>
   
   <script>if((new Date().getTime()%10)>0){
   document.querySelector('marquee').style.display='none';
