@@ -31,12 +31,12 @@ async function onRequest(req, res) {
   if(req.url.startsWith('/_root/')){req.url=req.url.replace('/_root/','/');}
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
-    if(req.url.includes('sw.js')){
+    /*if(req.url.includes('sw.js')){
       res=addCorsHeaders(res);
       res=addCacheHeaders(res);
       res.setHeader('content-type','text/javascript');
       return res.end(globalThis.sw);
-    }
+    }*/
 
 
     
