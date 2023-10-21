@@ -21,7 +21,7 @@ left: 0;
     }
   }
 </style>
-  <marquee><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe<button onclick="alert('[object Object]')">x</button>  </h1></marquee>
+  <marquee><table><tr><td></td><td><button onclick="alert('[object Object]')">x</button></td></tr><tr><td><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe</h1></td><td></td></tr></table></marquee>
   
   <script>if((new Date().getTime()%10)>0){
   document.querySelector('marquee').style.display='none';
