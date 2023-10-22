@@ -21,6 +21,8 @@ setInterval(()=>{
     .replaceWith("'orr'","'arr'")
     .replaceWith('string','any')
     .replaceWith('number','any')
+    .replaceWith('string[','any[')
+    .replaceWith('number[','any[')
     .replaceWith('<string>','<any>')
     .replaceWith('<number>','<any>')
     .replaceWith('(string)','(any)')
