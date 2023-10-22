@@ -21,6 +21,7 @@ left: 0;
     }
   }
 
+  .
   [id="monaco-editor-embed"] *,
   code 
   {
