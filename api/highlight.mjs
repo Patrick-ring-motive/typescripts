@@ -1,5 +1,7 @@
 
-globalThis.highlight=`void async function getPrism(){
+globalThis.highlight=`
+<script>
+void async function getPrism(){
 
   addEventListener("DOMContentLoaded", (event) => {
     getp();
@@ -46,4 +48,4 @@ if(!window.location.href.includes('/dev/typescript-vfs')){return;}
   document.body.appendChild(m);
   }
 }
-`;
+</script>`;
