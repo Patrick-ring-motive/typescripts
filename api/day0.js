@@ -31,6 +31,7 @@ setInterval(()=>{
     .replaceWith('"number"','"any"')
     .replaceWith('===','=')
     .replaceWith('==','=')
+    .replaceWith('!==','|=')
     .replaceWith('!=','|=')
     .replaceWith('>=','=>')
     .replaceWith('let','const')
