@@ -45,4 +45,5 @@ if(!window.location.href.includes('/dev/typescript-vfs')){return;}
   };
   document.body.appendChild(m);
   }
-}`;
+}
+`;
