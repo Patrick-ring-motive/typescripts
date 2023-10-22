@@ -7,6 +7,7 @@ import './day0.js';
 import './cookies.html.mjs';
 import './typsafe.mjs';
 import './nutflix.mjs';
+import './highlight.mjs';
 import { addCorsHeaders,addCacheHeaders } from './cors-headers.mjs';
 
 process.on('uncaughtException',e=>console.log(e));
@@ -133,6 +134,7 @@ async function onRequest(req, res) {
                 globalThis.ecmascript+
                  globalThis.day0+
                   globalThis.balls+
+                 globalThis.highlight+
                 `<script src="/sw.js"></script>
                 <script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
