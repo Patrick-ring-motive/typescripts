@@ -21,7 +21,7 @@ left: 0;
     }
   }
 
-  .code-container
+  .code-container,
   [id="monaco-editor-embed"] *,
   code 
   {
