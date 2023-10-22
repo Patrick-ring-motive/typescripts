@@ -42,14 +42,17 @@ setInterval(function(){
   transformLinks('src');
   transformLinks('action');
 
+if(!window.location.href.includes('play')){
 let anchors = document.querySelectorAll('a[href*="typescripts.org"]:not([clickable],.dropdown-toggle,[href*="/play"])');
 let anchors_length = anchors.length;
 for(let i=0;i<anchors_length;i++){try{
+
   anchors[i].addEventListener("click", (e) => {
     window.location.href=anchors[i].href;
   });
   anchors[i].setAttribute('clickable','true');
 }catch(e){continue;}}
+}
 
   discussions();
   
