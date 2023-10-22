@@ -14,8 +14,9 @@ setTimeout(function(){getp();},1);
 
 
 async function getp(){
-if(!window.location.href.includes('/dev/typescript-vfs')){return;}
-  if(!window.location.href.includes('/dev/sandbox')){return;}
+
+if((!window.location.href.includes('/dev/typescript-vfs'))
+&&(!window.location.href.includes('/dev/sandbox'))){return;}
   let thisLang = 'go';
   let codes=document.querySelectorAll('pre:not([highlighted])');
   let codes_length=codes.length;
