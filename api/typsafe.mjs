@@ -20,6 +20,12 @@ left: 0;
         visibility: hidden;
     }
   }
+
+  [id="monaco-editor-embed"] *,
+  code 
+  {
+  font-family:"Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
+  }
 </style>
   <marquee><table><tr><td></td><td><button onclick="alert('Cannot read property ’target’ of undefined')">x</button></td></tr><tr><td><h1>​j​a​v​a​s​c​r​i​p​t​ was never meant to be type safe</h1></td><td></td></tr></table></marquee>
   

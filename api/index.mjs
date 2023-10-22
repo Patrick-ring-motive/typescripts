@@ -174,16 +174,17 @@ async function onRequest(req, res) {
      let rb = Buffer.from(responseBuffer);
       return res.end(rb);
       }catch(e){
+        console.log(e)
         return res.end(''+responseBuffer);
       }
     }
 
 
   }catch(e){
-
+console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
-    res.end(e);
+    res.end(e.message);
     
   }
 }
