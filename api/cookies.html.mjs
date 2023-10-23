@@ -19,7 +19,7 @@ globalThis.cooky=`
   <div id="onetrust-banner-sdk" class="otFlat bottom ot-wo-title vertical-align-content ot-fade-in" role="region" aria-label="Cookie banner">
     <p id="onetrust-policy-text">   &nbsp;<button id="cookie-accept">Accept
       </button>&nbsp;
-      This site uses cookies and similar tracking technology. As disclosed i​n our Piracy Statement, we and our partners may collect personal information and other data. By continuing to use our website, you accept our Piracy Statement and Terms of Servix.
+      This site uses cookies and similar tracking technology. As disclosed i​n our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03" target="_blank">Piracy Statement</a>, we and our partners may collect personal information and other data. By continuing to use our website, you accept our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%03" target="_blank">Piracy Statement</a> and Terms of Servix.
     </p>
   </div>
 </div>
