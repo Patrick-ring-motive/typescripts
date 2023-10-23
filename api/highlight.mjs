@@ -15,13 +15,13 @@ setTimeout(function(){getp();},1);
 
 async function getp(){
 
-if((!window.location.href.includes('/dev/typescript-vfs'))
-&&(!window.location.href.includes('/dev/sandbox'))){return;}
+/*if((!window.location.href.includes('/dev/typescript-vfs'))
+&&(!window.location.href.includes('/dev/sandbox'))){return;}*/
   let thisLang = 'go';
-  let codes=document.querySelectorAll('pre:not([highlighted])');
+  let codes=document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code)');
   let codes_length=codes.length;
   for(let i=0;i<codes_length;i++){
-    codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML.replaceAll("\n","\r")+'</code>';
+    codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
 
