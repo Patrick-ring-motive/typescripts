@@ -126,6 +126,7 @@ async function onRequest(req, res) {
   .replaceAll('TypeScript extends JavaScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 extends 𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
       .replaceAll('JavaScript With Syntax For Types','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌 With Syntax For Types')
         .replace(/<meta /gi,'<weta ')
+        .replace(/createElement("meta"/gi,'createElement("weta"');
         .replaceAll('property="og:','property="ok:')
         .replaceAll('content="typescriptlang"','content="typescripts"')
         .replaceAll('property=og:','property=ok:')
