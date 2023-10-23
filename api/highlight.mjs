@@ -24,10 +24,11 @@ async function getp(){
     codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
-  t
+  try{
   if(Prism){
     Prism?.highlightAll?.();
     }
+    }catch(e){}
   if(!document.querySelector('[id="prismmincss"]')){
   let l=document.createElement('link');
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
@@ -46,7 +47,7 @@ async function getp(){
     let g=document.createElement('script');
     g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js';
     g.id="prismgominjs";
-    g.onload=function(){Prism.highlightAll();};
+    g.onload=function(){globalThis.Prism=Prism;Prism.highlightAll();};
   document.body.appendChild(g); 
     }  
   };
