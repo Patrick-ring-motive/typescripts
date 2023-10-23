@@ -63,7 +63,7 @@ if(document.body){
     globalThis.Prism=Prism;Prism.highlightAll();
     
     let ss = document.createElement('style');
-    ss.innerHTML='code[class*="language-"], pre[class*="language-"]{color:blue;} code[class*="language-"] *:not(code,pre), pre[class*="language-"] *:not(code,pre){color:green;}';
+    ss.innerHTML='code[class*="language-"], pre[class*="language-"]{color:blue;} code[class*="language-"] *:not(code,pre), pre[class*="language-"] *:not(code,pre){color:green;} .code-container{overflow:visible;} code span[style="color: #008000"]{text-wrap:pretty;}';
     document.body.appendChild(ss);
     };
   document.body.appendChild(g); 
