@@ -131,6 +131,7 @@ async function onRequest(req, res) {
         <meta property="og:url" content="`+'https://' + hostTarget + path+`" />
         <meta property="og:image"
           content="https://typescripts.org/Trollface.jpg" />
+          
         <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}
