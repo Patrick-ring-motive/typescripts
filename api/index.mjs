@@ -125,8 +125,8 @@ async function onRequest(req, res) {
         .replace('<h2>What is TypeScript?</h2>',globalThis.ligma)
   .replaceAll('TypeScript extends JavaScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 extends 𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
       .replaceAll('JavaScript With Syntax For Types','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌 With Syntax For Types')
-        .replace(/<meta /gi,'<weta ')
-        .replaceAll('"meta"','"weta"')
+        .replace(/<meta /gi,'<link ')
+        .replaceAll('"meta"','"link"')
         .replaceAll('property="og:','property="ok:')
         .replaceAll('content="typescriptlang"','content="typescripts"')
         .replaceAll('property=og:','property=ok:')
@@ -135,7 +135,7 @@ async function onRequest(req, res) {
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
-        <meta charset="utf-8">
+
          <meta property="og:title" content="TypeScripts">
          <meta property="og:type" content="website">
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
@@ -143,6 +143,9 @@ async function onRequest(req, res) {
           content="`+'https://typescripts.org' + (path+`/trollface.jpeg`).replace('//','/')+`" />
          
         <meta property="og:image:alt" content="TypeScripts" />
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}
         img[id="microsoft-logo"]{display:none;visibility:hidden;opacity:0%;}
