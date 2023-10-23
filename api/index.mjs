@@ -135,6 +135,7 @@ async function onRequest(req, res) {
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
+        <meta charset="utf-8">
          <meta property="og:title" content="TypeScripts">
          <meta property="og:type" content="website">
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
