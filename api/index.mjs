@@ -123,9 +123,15 @@ async function onRequest(req, res) {
       let resBody = await response.text();
       resBody = resBody
         .replace('<h2>What is TypeScript?</h2>',globalThis.ligma)
+  .replaceAll('TypeScript extends JavaScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 extends 𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
+      .replaceAll('JavaScript With Syntax For Types','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌 With Syntax For Types')
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
+        <meta property="og:url" content="`+'https://' + hostTarget + path+`" />
+        <meta property="og:image"
+          content="https://en.wikipedia.org/wiki/Trollface#/media/File:Trollface_non-free.png" />
+        <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}
         img[id="microsoft-logo"]{display:none;visibility:hidden;opacity:0%;}
