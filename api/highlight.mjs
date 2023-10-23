@@ -30,7 +30,9 @@ Prism?.highlightAll?.();
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
   l.rel='stylesheet';
   l.id="prismmincss";
-  (document.body||document.firstElementChild).appendChild(l);
+  let b = document.body
+  if(!b){b=document.firstElementChild;}
+  b.appendChild(l);
   }
 
   if(!document.querySelector('[id="prismminjs"]')){
@@ -43,10 +45,14 @@ Prism?.highlightAll?.();
     g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js';
     g.id="prismgominjs";
     g.onload=function(){Prism.highlightAll();};
-    (document.body||document.firstElementChild).appendChild(g); 
+     let b = document.body
+  if(!b){b=document.firstElementChild;}
+  b.appendChild(g); 
     }  
   };
-  (document.body||document.firstElementChild).appendChild(m);
+   let b = document.body
+  if(!b){b=document.firstElementChild;}
+  b.appendChild(m);
   }
 }
 </script>`;
