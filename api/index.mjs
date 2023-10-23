@@ -130,7 +130,7 @@ async function onRequest(req, res) {
         .replace('<head>', `<head>
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
         <meta property="og:image"
-          content="`+'https://typescripts.org' + (path+`/trollface.jepg`).replace('//','/')+`" />
+          content="`+'https://typescripts.org' + (path+`/trollface.jpeg`).replace('//','/')+`" />
           <meta property="og:type" content="website">
         <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
