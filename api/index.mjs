@@ -125,13 +125,16 @@ async function onRequest(req, res) {
         .replace('<h2>What is TypeScript?</h2>',globalThis.ligma)
   .replaceAll('TypeScript extends JavaScript','𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 extends 𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
       .replaceAll('JavaScript With Syntax For Types','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌 With Syntax For Types')
+        .replace(/<html /i,'<html  xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" ')
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
+         <meta property="og:title" content="𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 🗿">
+         <meta property="og:type" content="website">
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
         <meta property="og:image"
           content="`+'https://typescripts.org' + (path+`/trollface.jpeg`).replace('//','/')+`" />
-          <meta property="og:type" content="website">
+         
         <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}
