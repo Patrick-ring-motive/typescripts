@@ -24,6 +24,7 @@ async function getp(){
     codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
+  
 Prism?.highlightAll?.();
   if(!document.querySelector('[id="prismmincss"]')){
   let l=document.createElement('link');
