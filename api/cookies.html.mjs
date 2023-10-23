@@ -19,7 +19,7 @@ globalThis.cooky=`
   <div id="onetrust-banner-sdk" class="otFlat bottom ot-wo-title vertical-align-content ot-fade-in" role="region" aria-label="Cookie banner">
     <p id="onetrust-policy-text">   &nbsp;<button id="cookie-accept">Accept
       </button>&nbsp;
-      This site uses cookies and similar tracking technology. As disclosed i​n our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03" target="_blank">Piracy Statement</a>, we and our partners may collect personal information and other data. By continuing to use our website, you accept our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03" target="_blank">Piracy Statement</a> and <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fmj6bwtwjqyvb1.gif%3Fformat%3Dmp4%26s%3Da6b378561c60f45a980b3eac53eb7b98101071af3" target="_blank">Terms of Servix</a>.
+      This site uses cookies and similar tracking technology. As disclosed i​n our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03" target="_blank">Piracy Statement</a>, we and our partners may collect personal information and other data. By continuing to use our website, you accept our <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03" target="_blank">Piracy Statement</a> and <a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fmj6bwtwjqyvb1.gif%3Fformat%3Dmp4%26s%3Da6b378561c60f45a980b3eac53eb7b98101071af" target="_blank">Terms of Servix</a>.
     </p>
   </div>
 </div>
@@ -39,10 +39,11 @@ let ckieOpacity=parseFloat(sessionStorage.getItem('cookieop'));
   ckie.style.opacity=(ckieOpacity*0.9);
   sessionStorage.setItem('cookieop',ckie.style.opacity);
 };
+setInterval(function(){
 if(document.querySelector('[title="Microsoft Privacy Policy"]')){
   let p = document.querySelector('[title="Microsoft Privacy Policy"]');
   p.innerText = "Piracy";
   p.setAttribute('target','_blank');
   p.href='https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03';
-}
+}},500);
 </script>`;
