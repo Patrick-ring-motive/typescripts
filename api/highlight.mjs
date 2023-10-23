@@ -24,7 +24,7 @@ async function getp(){
     codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
-Prism.highlightAll();
+Prism?.highlightAll?.();
   if(!document.querySelector('[id="prismmincss"]')){
   let l=document.createElement('link');
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
