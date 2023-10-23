@@ -127,6 +127,8 @@ async function onRequest(req, res) {
       .replaceAll('JavaScript With Syntax For Types','𝖩𝖺𝗏𝖺𝖲𝖼𝗋𝗂𝗉𝗍𝗌 With Syntax For Types')
         .replaceAll('property="og:','property="ok:')
         .replaceAll('content="typescriptlang"','content="typescripts"')
+        .replaceAll('property=og:','property=ok:')
+        .replaceAll('content=typescriptlang','content=typescripts')
         .replace(/<html /i,'<html  xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" scriptsOn" style="--ipt-focus-outline-on-base:none; --ipt-focus-outline-on-baseAlt:none;" ')
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
