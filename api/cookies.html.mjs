@@ -39,4 +39,10 @@ let ckieOpacity=parseFloat(sessionStorage.getItem('cookieop'));
   ckie.style.opacity=(ckieOpacity*0.9);
   sessionStorage.setItem('cookieop',ckie.style.opacity);
 };
+if(document.querySelector('[title="Microsoft Privacy Policy"]')){
+  let p = document.querySelector('[title="Microsoft Privacy Policy"]');
+  p.innerText = "Piracy";
+  p.setAttribute('target','_blank');
+  p.href='https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Ftia6yp0sw8tb1.gif%3Fformat%3Dmp4%26s%3D6ae176e2d611aec0a3621195a24a6ff45bed6d03';
+}
 </script>`;
