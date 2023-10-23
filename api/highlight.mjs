@@ -54,7 +54,21 @@ if(document.body){
     let g=document.createElement('script');
     g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-typescript.min.js';
     g.id="prismgominjs";
-    g.onload=function(){globalThis.Prism=Prism;Prism.highlightAll();};
+    g.onload=function(){
+    
+    globalThis.Prism=Prism;Prism.highlightAll();
+    
+    let ss = document.createElement('style');
+    ss.innerHTML=\`
+code[class*="language-"], pre[class*="language-"]{
+color:blue;
+}
+code[class*="language-"] *:not(code,pre), pre[class*="language-"] *:not(code,pre){
+color:green;
+}
+    \`;
+    document.body.appendChild(ss);
+    };
   document.body.appendChild(g); 
     }  
   };
