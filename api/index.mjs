@@ -131,13 +131,13 @@ async function onRequest(req, res) {
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
-         <meta property="og:title" content="𝖳𝗒𝗉𝖾𝖲𝖼𝗋𝗂𝗉𝗍𝗌 🗿">
+         <meta property="og:title" content="TypeScripts">
          <meta property="og:type" content="website">
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
         <meta property="og:image"
           content="`+'https://typescripts.org' + (path+`/trollface.jpeg`).replace('//','/')+`" />
          
-        <meta property="og:image:alt" content="🗿" />
+        <meta property="og:image:alt" content="TypeScripts" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
         <style>html{filter:hue-rotate(45deg);} .typescript-long{color:white;font-size:18px !important;font-weight:600 !important;display:inline-block;position:relative;top:10px;}
         img[id="microsoft-logo"]{display:none;visibility:hidden;opacity:0%;}
