@@ -130,7 +130,7 @@ async function onRequest(req, res) {
         .replace('<head>', `<head>
         <meta property="og:url" content="`+'https://' + hostTarget + path+`" />
         <meta property="og:image"
-          content="`+'https://' + hostTarget + path+`/Trollface.jpg" />
+          content="`+'https://' + hostTarget + path+`/Trollface.jpg``" />
           <meta property="og:type" content="website">
         <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
