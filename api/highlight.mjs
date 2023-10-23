@@ -18,6 +18,7 @@ setTimeout(function(){getp();},1);
 
 async function getp(){
 
+if(window.location.href.includes('/docs/handbook/declaration-files/dts-from-js.html')){return;}
 /*if((!window.location.href.includes('/dev/typescript-vfs'))
 &&(!window.location.href.includes('/dev/sandbox'))){return;}*/
   let thisLang = 'typescript';
