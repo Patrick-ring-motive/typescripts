@@ -17,7 +17,7 @@ async function getp(){
 
 /*if((!window.location.href.includes('/dev/typescript-vfs'))
 &&(!window.location.href.includes('/dev/sandbox'))){return;}*/
-  let thisLang = 'go';
+  let thisLang = 'ts';
   let codes=document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code),pre:not([highlighted]):has(code):not(:has(.language-id))');
   let codes_length=codes.length;
   for(let i=0;i<codes_length;i++){
@@ -45,7 +45,7 @@ async function getp(){
   m.onload=function(){
     if(!document.querySelector('[id="prismgominjs"]')){
     let g=document.createElement('script');
-    g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js';
+    g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-typescript.min.js';
     g.id="prismgominjs";
     g.onload=function(){globalThis.Prism=Prism;Prism.highlightAll();};
   document.body.appendChild(g); 
