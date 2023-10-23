@@ -128,9 +128,9 @@ async function onRequest(req, res) {
         .replace(/\/www.typescriptlang.org/gi,'/typescripts.org')
         .replace(/\/typescriptlang.org/gi,'/typescripts.org')
         .replace('<head>', `<head>
-        <meta property="og:url" content="`+'https://' + hostTarget + path+`" />
+        <meta property="og:url" content="`+'https://' + localhost + path+`" />
         <meta property="og:image"
-          content="`+'https://' + hostTarget + (path+`/Trollface.jpg`).replace('//','/')+`" />
+          content="`+'https://' + localhost + (path+`/Trollface.jpg`).replace('//','/')+`" />
           <meta property="og:type" content="website">
         <meta property="og:image:alt" content="🗿" />
         <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png">
