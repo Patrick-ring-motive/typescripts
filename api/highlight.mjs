@@ -21,7 +21,7 @@ if((!window.location.href.includes('/dev/typescript-vfs'))
   let codes=document.querySelectorAll('pre:not([highlighted])');
   let codes_length=codes.length;
   for(let i=0;i<codes_length;i++){
-    codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
+    codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML.replaceAll("\n","\r")+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
 

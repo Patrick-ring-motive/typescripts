@@ -23,7 +23,8 @@ left: 0;
 
   .code-container,
   [id="monaco-editor-embed"] *,
-  code 
+  code,
+  code>pre
   {
   font-family:"Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
   }
