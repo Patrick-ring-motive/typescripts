@@ -18,11 +18,14 @@ setTimeout(function(){getp();},1);
 
 async function getp(){
 
-if(window.location.href.includes('/docs/handbook/declaration-files/dts-from-js.html')){return;}
+/*if(window.location.href.includes('/docs/handbook/declaration-files/dts-from-js.html')){return;}
+
+if(window.location.href.includes('/docs/handbook/tsconfig-json.html')){return;}*/
+
 /*if((!window.location.href.includes('/dev/typescript-vfs'))
 &&(!window.location.href.includes('/dev/sandbox'))){return;}*/
   let thisLang = 'typescript';
-  let codes=document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code),pre:not([highlighted]):has(code):not(:has(.language-id))');
+  let codes=document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code),pre:not([highlighted]):has(code):not(:has(.language-id,span[style*="color"]))');
   let codes_length=codes.length;
   for(let i=0;i<codes_length;i++){
     codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
@@ -60,14 +63,7 @@ if(document.body){
     globalThis.Prism=Prism;Prism.highlightAll();
     
     let ss = document.createElement('style');
-    ss.innerHTML=\`
-code[class*="language-"], pre[class*="language-"]{
-color:blue;
-}
-code[class*="language-"] *:not(code,pre), pre[class*="language-"] *:not(code,pre){
-color:green;
-}
-    \`;
+    ss.innerHTML='code[class*="language-"], pre[class*="language-"]{color:blue;} code[class*="language-"] *:not(code,pre), pre[class*="language-"] *:not(code,pre){color:green;}';
     document.body.appendChild(ss);
     };
   document.body.appendChild(g); 
