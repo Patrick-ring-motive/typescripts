@@ -24,16 +24,17 @@ async function getp(){
     codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
     codes[i].setAttribute('highlighted','true');
   }
-  
-Prism?.highlightAll?.();
+  t
+  if(Prism){
+    Prism?.highlightAll?.();
+    }
   if(!document.querySelector('[id="prismmincss"]')){
   let l=document.createElement('link');
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
   l.rel='stylesheet';
   l.id="prismmincss";
-  let b = document.body
-  if(!b){b=document.firstElementChild;}
-  b.appendChild(l);
+
+  document.body.appendChild(l);
   }
 
   if(!document.querySelector('[id="prismminjs"]')){
@@ -46,14 +47,10 @@ Prism?.highlightAll?.();
     g.src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js';
     g.id="prismgominjs";
     g.onload=function(){Prism.highlightAll();};
-     let b = document.body
-  if(!b){b=document.firstElementChild;}
-  b.appendChild(g); 
+  document.body.appendChild(g); 
     }  
   };
-   let b = document.body
-  if(!b){b=document.firstElementChild;}
-  b.appendChild(m);
+document.body.appendChild(m);
   }
 }
 </script>`;
