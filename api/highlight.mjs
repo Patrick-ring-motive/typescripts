@@ -1,6 +1,9 @@
 
 globalThis.highlight=`
 <script>
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 void async function getPrism(){
 
   addEventListener("DOMContentLoaded", (event) => {
@@ -34,8 +37,12 @@ async function getp(){
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
   l.rel='stylesheet';
   l.id="prismmincss";
-
+if(document.body){
   document.body.appendChild(l);
+  }else{
+  await sleep(500);
+  document.body.appendChild(l);
+  }
   }
 
   if(!document.querySelector('[id="prismminjs"]')){
