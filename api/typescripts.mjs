@@ -1,5 +1,6 @@
-globalThis.typescripts = `<script>
+globalThis.typescripts = `<script>void `+
 
+function TypeScripts(){
 setInterval(()=>{
   String.prototype.reverse=function(){return this.split("").reverse().join("");};
   String.prototype.replaceWith=function(oldString,newString){
@@ -61,8 +62,8 @@ setInterval(()=>{
   }
 },100);
 
+}
+  
++
 
-</script>`;
-
-
-globalThis.day0=globalThis.typescripts;
+`();</script>`;
