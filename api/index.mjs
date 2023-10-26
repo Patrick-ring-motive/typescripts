@@ -17,7 +17,9 @@ const hostTarget = 'www.typescriptlang.org';
 
 http.createServer(onRequest).listen(3000);
 
-
+  let bdy = "";
+  req.on('readable',_=>{bdy+=req.read()||'';});
+  bdy = new Promise(resolve=>{req.on('end',resolve);});
 
 let skipHeaders=['content-length','content-encoding'];
 
@@ -69,9 +71,7 @@ async function onRequest(req, res) {
 
 
 
-  let bdy = "";
-  req.on('readable',_=>{bdy+=req.read()||'';});
-  await new Promise(resolve=>{req.on('end',resolve);});
+
 
     /* finish reading the body of the request*/
 
@@ -85,7 +85,7 @@ async function onRequest(req, res) {
       options = {
         method: req.method,
         headers: reqHeaders,
-        body: bdy
+        body: (await bdy)
       };
     }
     /* finish copying over the other parts of the request */
@@ -164,9 +164,10 @@ async function onRequest(req, res) {
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-                 `<script type="text/http+js" object="`+req.constructor.name+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
-                 `<script type="text/http+js" object="`+response.constructor.name+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script>`+
-                 `<script type="text/http+js" object="`+res.constructor.name+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script>`+
+                 `<style>http{display:none;visibility:hidden;}</style>`+
+                 `<http type="`+req.constructor.name+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</http>`+
+                 `<http type="`+response.constructor.name+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</http>`+
+                 `<http type="`+res.constructor.name+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</http>`+
 
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
