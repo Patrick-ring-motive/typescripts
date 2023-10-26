@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import http from 'http';
+import util from 'node:util';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './sw.mjs';
@@ -162,7 +163,10 @@ async function onRequest(req, res) {
                 <script src="https://www.bing.com/search?q=site%3Awww.typescripts.org"></script>`)
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
-        .replace('</head>',`</head><!-- Google tag (gtag.js) -->
+        .replace('</head>',
+                 `<script type="text/http+json" >`+util.inspect(req, { showHidden: true, depth: null })+`</script>`+
+                 
+                 `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
 <noscript><iframe src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></iframe></noscript>
 <script>
