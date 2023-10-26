@@ -109,7 +109,7 @@ let bdy = "";
 
     /* copy over response headers  */
 
-    //res.headers = response.headers;
+    res.headers = response.headers;
 
     /* check to see if the response is not a text format */
     let ct = response.headers.get('content-type');
