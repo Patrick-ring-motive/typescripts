@@ -5,7 +5,7 @@ import util from 'node:util';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './sw.mjs';
-import './day0.js';
+import './typescripts.mjs';
 import './cookies.html.mjs';
 import './typsafe.mjs';
 import './nutflix.mjs';
@@ -154,7 +154,7 @@ async function onRequest(req, res) {
         </style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
-                 globalThis.day0+
+                 globalThis.typescripts+
                   globalThis.balls+
                  globalThis.highlight+
               //  `<script src="/sw.js"></script>`+
