@@ -90,10 +90,10 @@ async function onRequest(req, res) {
     }
     /* finish copying over the other parts of the request */
 
-    let request = new Request('https://' + hostTarget + path, options);
+    //let request = new Request('https://' + hostTarget + path, options);
     
     /* fetch from your desired target */
-    let response = await fetch(request);
+    let response = await fetcht('https://' + hostTarget + path, options);
 
     for (let [key, value] of response.headers.entries()) {
       res.setHeader(key, value);
