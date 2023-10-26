@@ -23,9 +23,9 @@ let skipHeaders=['content-length','content-encoding'];
 
 async function onRequest(req, res) {
   try{
-  
+
   let localhost = req.headers['Host'];
-  
+
   if (req.url == '/ping') {
     res.statusCode = 200;
     return res.end();
@@ -41,7 +41,7 @@ async function onRequest(req, res) {
     }*/
 
 
-    
+
   if(req.url.includes('favicon.ico')){
     let rbi = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicontss.ico');
     rbi=await rbi.arrayBuffer();
@@ -53,7 +53,7 @@ async function onRequest(req, res) {
 
   let path = req.url.replace('*', '');
 
-  
+
 
   let reqHeaders = {}
   for (const property in req.headers) {
@@ -63,11 +63,11 @@ async function onRequest(req, res) {
       }
     } catch (e) { continue; }
   }
-  
+
   reqHeaders.host = hostTarget;
   reqHeaders.referer = 'https://'+hostTarget;
 
-  
+
 
   let bdy = "";
   req.on('readable',_=>{bdy+=req.read()||'';});
@@ -109,7 +109,7 @@ async function onRequest(req, res) {
     res.removeHeader('content-length');
     res=addCorsHeaders(res);
   //  res=addCacheHeaders(res);
-    
+
     /* copy over response headers  */
 
     res.headers = response.headers;
@@ -142,7 +142,7 @@ async function onRequest(req, res) {
         <meta property="og:url" content="`+'https://typescripts.org' + path+`" />
         <meta property="og:image"
           content="`+'https://typescripts.org' + (path+`/trollface.jpeg`).replace('//','/')+`" />
-         
+
         <meta property="og:image:alt" content="TypeScripts" />
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -165,7 +165,9 @@ async function onRequest(req, res) {
 
         .replace('</head>',
                  `<script type="text/http+json" >`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
-                 
+                 `<script type="text/http+json" >`+util.inspect(response, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+json" >`+util.inspect(res, { showHidden: false, depth: 3 })+`</script>`+
+
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
 <noscript><iframe src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></iframe></noscript>
@@ -181,7 +183,7 @@ async function onRequest(req, res) {
         <div style="visibility:hidden;">
         <a href="https://lenguapedia.org/">https://lenguapedia.org</a
         <a href="https://patrickring.net/">https://patrickring.net</a>
-       
+
         </div>`+
         globalThis.cooky+
         globalThis.typsafe+
@@ -211,6 +213,6 @@ console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
     res.end(e.message);
-    
+
   }
 }
