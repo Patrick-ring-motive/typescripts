@@ -17,9 +17,6 @@ const hostTarget = 'www.typescriptlang.org';
 
 http.createServer(onRequest).listen(3000);
 
-  let bdy = "";
-  req.on('readable',_=>{bdy+=req.read()||'';});
-  bdy = new Promise(resolve=>{req.on('end',resolve);});
 
 let skipHeaders=['content-length','content-encoding'];
 
@@ -70,6 +67,9 @@ async function onRequest(req, res) {
   reqHeaders.referer = 'https://'+hostTarget;
 
 
+  let bdy = "";
+  req.on('readable',_=>{bdy+=req.read()||'';});
+  bdy = new Promise(resolve=>{req.on('end',resolve);});
 
 
 
