@@ -52,6 +52,10 @@ async function onRequest(req, res) {
 
   let path = req.url.replace('*', '');
 
+let bdy = "";
+  req.on('readable',_=>{bdy+=req.read()||'';});
+  bdy = new Promise(resolve=>{req.on('end',resolve);});
+
 
 
   let reqHeaders = {}
@@ -62,9 +66,6 @@ async function onRequest(req, res) {
       }
     } catch (e) { continue; }
   }
-
-  reqHeaders.host = hostTarget;
-  reqHeaders.referer = 'https://'+hostTarget;
 
 
   let bdy = "";
