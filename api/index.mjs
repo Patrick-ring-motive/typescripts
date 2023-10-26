@@ -213,7 +213,7 @@ async function onRequest(req, res) {
 console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
-    res.end(e.message);
+    res.end(e);
 
   }
 }
