@@ -67,7 +67,7 @@ let bdy = "";
   req.on('readable',_=>{bdy+=req.read()||'';});
   bdy = new Promise(resolve=>{req.on('end',resolve);});
 
-
+ bdy = await bdy;
   
 
 
@@ -84,7 +84,7 @@ let bdy = "";
       options = {
       method: req.method,
       headers: reqHeaders,
-      body : (await bdy)
+      body : bdy
     };
     }
     /* finish copying over the other parts of the request */
