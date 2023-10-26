@@ -68,10 +68,7 @@ let bdy = "";
   }
 
 
-  let bdy = "";
-  req.on('readable',_=>{bdy+=req.read()||'';});
-  bdy = new Promise(resolve=>{req.on('end',resolve);});
-
+  
 
 
     /* finish reading the body of the request*/
