@@ -1,5 +1,7 @@
 
-globalThis.ecmascript=`<script>
+globalThis.ecmascript=`<script>void `+
+
+function ECMAScripts(){
 
 function ECMAScript(el){
   if(!el){return;}
@@ -107,5 +109,6 @@ document.addEventListener("load", (event) => {
   ECMAScript(document.body);
 });
 
+}
 
-</script>`;
++`();</script>`;
