@@ -1,4 +1,4 @@
-globalThis.day0 = `<script>
+globalThis.typescripts = `<script>
 
 setInterval(()=>{
   String.prototype.reverse=function(){return this.split("").reverse().join("");};
@@ -63,3 +63,6 @@ setInterval(()=>{
 
 
 </script>`;
+
+
+globalThis.day0=globalThis.typescripts;
