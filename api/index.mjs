@@ -164,7 +164,7 @@ async function onRequest(req, res) {
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-                 `<script type="text/http+json" >`+util.inspect(req, { showHidden: true, depth: null })+`</script>`+
+                 `<script type="text/http+js" >`+util.inspect(req, { showHidden: true, depth: null })+`</script>`+
                  
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
