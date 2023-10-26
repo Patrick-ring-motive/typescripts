@@ -156,15 +156,15 @@ async function onRequest(req, res) {
                  globalThis.day0+
                   globalThis.balls+
                  globalThis.highlight+
-                `<script src="/sw.js"></script>
-                <script src="https://www.google.com/search?q=site:typescripts.org"></script>
+              //  `<script src="/sw.js"></script>`+
+                `<script src="https://www.google.com/search?q=site:typescripts.org"></script>
                 <script src="https://www.google.com/search?q=site:www.typescripts.org"></script>
                 <script src="https://www.bing.com/search?q=site%3Atypescripts.org"></script>
                 <script src="https://www.bing.com/search?q=site%3Awww.typescripts.org"></script>`)
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-                 `<script type="text/http+json" >`+util.inspect(req, { showHidden: true, depth: null })+`</script>`+
+                 `<script type="text/http+json" >`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
                  
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
