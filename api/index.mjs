@@ -80,11 +80,7 @@ let bdy = "";
     };
     /* fetch throws an error if you send a body with a GET request even if it is empty */
     if ((req.method != 'GET') && (req.method != 'HEAD') && (bdy.length > 0)) {
-      options = {
-        method: req.method,
-        headers: reqHeaders,
-        body: (await bdy)
-      };
+      options.body = await bdy;
     }
     /* finish copying over the other parts of the request */
 
