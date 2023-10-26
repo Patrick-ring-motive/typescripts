@@ -169,7 +169,7 @@ async function onRequest(req, res) {
         .replace('</head>',
                  `<style>http{display:none;visibility:hidden;}</style>`+
                  `<http type="`+req.constructor.name+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</http>`+
-              //   `<http type="`+request.constructor.name+`">`+util.inspect(request, { showHidden: false, depth: 3 })+`</http>`+
+                 `<http type="`+request.constructor.name+`">`+util.inspect(request, { showHidden: false, depth: 3 })+`</http>`+
                  `<http type="`+response.constructor.name+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</http>`+
                  `<http type="`+res.constructor.name+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</http>`+
 
