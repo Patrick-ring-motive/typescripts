@@ -164,9 +164,9 @@ async function onRequest(req, res) {
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-                 `<script type="text/http+js" object="`+req.constructor+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
-                 `<script type="text/http+js" object="`+response.constructor+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script>`+
-                 `<script type="text/http+js" object="`+res.constructor+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+js" object="`+req.constructor.name+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+js" object="`+response.constructor.name+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+js" object="`+res.constructor.name+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script>`+
 
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
