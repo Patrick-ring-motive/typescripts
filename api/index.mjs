@@ -90,8 +90,10 @@ async function onRequest(req, res) {
     }
     /* finish copying over the other parts of the request */
 
+    let request = new Request('https://' + hostTarget + path, options);
+    
     /* fetch from your desired target */
-    let response = await fetch('https://' + hostTarget + path, options);
+    let response = await fetch(request);
 
     for (let [key, value] of response.headers.entries()) {
       res.setHeader(key, value);
@@ -166,6 +168,7 @@ async function onRequest(req, res) {
         .replace('</head>',
                  `<style>http{display:none;visibility:hidden;}</style>`+
                  `<http type="`+req.constructor.name+`">`+util.inspect(req, { showHidden: false, depth: 3 })+`</http>`+
+                 `<http type="`+request.constructor.name+`">`+util.inspect(request, { showHidden: false, depth: 3 })+`</http>`+
                  `<http type="`+response.constructor.name+`">`+util.inspect(response, { showHidden: false, depth: 3 })+`</http>`+
                  `<http type="`+res.constructor.name+`">`+util.inspect(res, { showHidden: false, depth: 3 })+`</http>`+
 
