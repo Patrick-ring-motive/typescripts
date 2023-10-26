@@ -1,10 +1,11 @@
+
 import fetch from 'node-fetch';
 import http from 'http';
 import util from 'node:util';
 import './link-resolver-import.mjs';
 import './ecmascript.mjs';
 import './sw.mjs';
-import './typescripts.mjs';
+import './day0.js';
 import './cookies.html.mjs';
 import './typsafe.mjs';
 import './nutflix.mjs';
@@ -16,6 +17,7 @@ process.on('uncaughtException',e=>console.log(e));
 const hostTarget = 'www.typescriptlang.org';
 
 http.createServer(onRequest).listen(3000);
+
 
 
 let skipHeaders=['content-length','content-encoding'];
@@ -63,13 +65,14 @@ async function onRequest(req, res) {
     } catch (e) { continue; }
   }
 
-let bdy = "";
+  reqHeaders.host = hostTarget;
+  reqHeaders.referer = 'https://'+hostTarget;
+
+
+
+  let bdy = "";
   req.on('readable',_=>{bdy+=req.read()||'';});
-  bdy = new Promise(resolve=>{req.on('end',resolve);});
-
- bdy = await bdy;
-  
-
+  await new Promise(resolve=>{req.on('end',resolve);});
 
     /* finish reading the body of the request*/
 
@@ -80,20 +83,16 @@ let bdy = "";
     };
     /* fetch throws an error if you send a body with a GET request even if it is empty */
     if ((req.method != 'GET') && (req.method != 'HEAD') && (bdy.length > 0)) {
-      //options.body = ;
       options = {
-      method: req.method,
-      headers: reqHeaders,
-      body : bdy
-    };
+        method: req.method,
+        headers: reqHeaders,
+        body: bdy
+      };
     }
     /* finish copying over the other parts of the request */
 
-    //let request = new Request('https://' + hostTarget + path, options);
-    
     /* fetch from your desired target */
     let response = await fetch('https://' + hostTarget + path, options);
- 
 
     for (let [key, value] of response.headers.entries()) {
       res.setHeader(key, value);
@@ -155,7 +154,7 @@ let bdy = "";
         </style>
         <link rel="stylesheet" href="/_next/static/css/eb2d2164875b4d4b.css" data-n-g="">`+globalThis['link-resolver-import']+
                 globalThis.ecmascript+
-                 globalThis.typescripts+
+                 globalThis.day0+
                   globalThis.balls+
                  globalThis.highlight+
               //  `<script src="/sw.js"></script>`+
@@ -166,11 +165,9 @@ let bdy = "";
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-                 `<style>http{display:none;visibility:hidden;}</style>`+
-                 `<http type="`+req.constructor.name+`"><script type="text/http">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script></http>`+
-                // `<http type="`+request.constructor.name+`"><script type="text/http">`+util.inspect(request, { showHidden: false, depth: 3 })+`</script></http>`+
-                 `<http type="`+response.constructor.name+`"><script type="text/http">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script></http>`+
-                 `<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script></http>`+
+                 `<script type="text/http+json" >`+util.inspect(req, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+json" >`+util.inspect(response, { showHidden: false, depth: 3 })+`</script>`+
+                 `<script type="text/http+json" >`+util.inspect(res, { showHidden: false, depth: 3 })+`</script>`+
 
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
@@ -216,7 +213,9 @@ let bdy = "";
 console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
-    res.end(e);
+    res.end(e.message);
 
   }
 }
+
+
