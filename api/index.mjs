@@ -89,7 +89,7 @@ let bdy = "";
     }
     /* finish copying over the other parts of the request */
 
-    let request = new Request('https://' + hostTarget + path, options);
+    //let request = new Request('https://' + hostTarget + path, options);
     
     /* fetch from your desired target */
     let response = await fetch('https://' + hostTarget + path, options);
@@ -168,7 +168,7 @@ let bdy = "";
         .replace('</head>',
                  `<style>http{display:none;visibility:hidden;}</style>`+
                  `<http type="`+req.constructor.name+`"><script type="text/http">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script></http>`+
-                 `<http type="`+request.constructor.name+`"><script type="text/http">`+util.inspect(request, { showHidden: false, depth: 3 })+`</script></http>`+
+                // `<http type="`+request.constructor.name+`"><script type="text/http">`+util.inspect(request, { showHidden: false, depth: 3 })+`</script></http>`+
                  `<http type="`+response.constructor.name+`"><script type="text/http">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script></http>`+
                  `<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script></http>`+
 
