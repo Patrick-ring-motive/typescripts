@@ -113,7 +113,7 @@ async function onRequest(req, res) {
 
     /* copy over response headers  */
 
-  //  res.headers = response.headers;
+
 
     /* check to see if the response is not a text format */
     let ct = response.headers.get('content-type');
@@ -216,7 +216,7 @@ async function onRequest(req, res) {
 console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
-    res.end(e.message);
+    res.end(util.inspect(e));
 
   }
 }
