@@ -1,8 +1,8 @@
 
-globalThis['link-resolver-import']=`<script>
+globalThis['link-resolver-import']=`<script>void `+
 
 
-
+function LinkResolver(){
 if(!globalThis.hostTargetList){
   globalThis.hostTargetList = ['www.typescriptlang.org','typescriptlang.org'];
 
@@ -211,5 +211,6 @@ document.querySelector('footer>section>article[id="community-links"]>ul')?.appen
   }catch(e){}
 }
 
-</script>`;
+}
++`();</script>`;
 

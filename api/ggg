@@ -1,4 +1,3 @@
-
 import fetch from 'node-fetch';
 import http from 'http';
 import util from 'node:util';
@@ -17,7 +16,6 @@ process.on('uncaughtException',e=>console.log(e));
 const hostTarget = 'www.typescriptlang.org';
 
 http.createServer(onRequest).listen(3000);
-
 
 
 let skipHeaders=['content-length','content-encoding'];
@@ -65,14 +63,13 @@ async function onRequest(req, res) {
     } catch (e) { continue; }
   }
 
-  reqHeaders.host = hostTarget;
-  reqHeaders.referer = 'https://'+hostTarget;
-
-
-
-  let bdy = "";
+let bdy = "";
   req.on('readable',_=>{bdy+=req.read()||'';});
-  await new Promise(resolve=>{req.on('end',resolve);});
+  bdy = new Promise(resolve=>{req.on('end',resolve);});
+
+ bdy = await bdy;
+  
+
 
     /* finish reading the body of the request*/
 
@@ -83,16 +80,20 @@ async function onRequest(req, res) {
     };
     /* fetch throws an error if you send a body with a GET request even if it is empty */
     if ((req.method != 'GET') && (req.method != 'HEAD') && (bdy.length > 0)) {
+      //options.body = ;
       options = {
-        method: req.method,
-        headers: reqHeaders,
-        body: bdy
-      };
+      method: req.method,
+      headers: reqHeaders,
+      body : bdy
+    };
     }
     /* finish copying over the other parts of the request */
 
+    //let request = new Request('https://' + hostTarget + path, options);
+    
     /* fetch from your desired target */
     let response = await fetch('https://' + hostTarget + path, options);
+ 
 
     for (let [key, value] of response.headers.entries()) {
       res.setHeader(key, value);
@@ -113,7 +114,7 @@ async function onRequest(req, res) {
 
     /* copy over response headers  */
 
-
+    res.headers = response.headers;
 
     /* check to see if the response is not a text format */
     let ct = response.headers.get('content-type');
@@ -165,13 +166,11 @@ async function onRequest(req, res) {
         .replace('/favicon-32x32.png','https://raw.githubusercontent.com/Patrick-ring-motive/typescripts/main/favicon.png')
 
         .replace('</head>',
-
-                 // `<style>http{display:none;visibility:hidden;}</style>`+
-                // `<http type="`+req.constructor.name+`"><script type="text/http">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script></http>`+
+                 `<style>http{display:none;visibility:hidden;}</style>`+
+                 `<http type="`+req.constructor.name+`"><script type="text/http">`+util.inspect(req, { showHidden: false, depth: 3 })+`</script></http>`+
                 // `<http type="`+request.constructor.name+`"><script type="text/http">`+util.inspect(request, { showHidden: false, depth: 3 })+`</script></http>`+
-                 //`<http type="`+response.constructor.name+`"><script type="text/http">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script></http>`+
-                 //`<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script></http>`+
-
+                 `<http type="`+response.constructor.name+`"><script type="text/http">`+util.inspect(response, { showHidden: false, depth: 3 })+`</script></http>`+
+                 `<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res, { showHidden: false, depth: 3 })+`</script></http>`+
 
                  `</head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEH36RWXCC"></script>
@@ -217,9 +216,7 @@ async function onRequest(req, res) {
 console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
-    res.end(util.inspect(e));
+    res.end(e);
 
   }
 }
-
-

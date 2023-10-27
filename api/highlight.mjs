@@ -1,7 +1,9 @@
 
-globalThis.highlight=`
-<script>
-function sleep(ms) {
+globalThis.highlight=`<script>void `+
+
+function Highlight(){
+
+globalThis.sleep=function(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 void async function getPrism(){
@@ -72,4 +74,7 @@ if(document.body){
 document.body.appendChild(m);
   }
 }
-</script>`;
+
+}
+
++`();</script>`;

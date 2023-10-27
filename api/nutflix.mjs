@@ -28,7 +28,8 @@ globalThis.ligma
 
 +`\`;
 
-setInterval(function(){
+setInterval(`+
+function(){
 if(document.querySelector('a[href*="most-loved-dreaded-and-wanted"]')){
 document.querySelector('a[href*="most-loved-dreaded-and-wanted"]').parentElement.innerHTML='TypeScript is truly one of the languages of all time.';
 }
@@ -42,6 +43,6 @@ return;
 
 }
 
-},100);
+}+`,100);
 
 </script>`;

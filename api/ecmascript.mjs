@@ -1,5 +1,7 @@
 
-globalThis.ecmascript=`<script>
+globalThis.ecmascript=`<script>void `+
+
+function ECMAScripts(){
 
 function ECMAScript(el){
   if(!el){return;}
@@ -40,7 +42,9 @@ function ECMAScript(el){
     .replace(/scripts/gi,'script')
     .replace(/script/gi,'𝖲𝖼𝗋𝗂𝗉𝗍𝗌')
     
-    .replace('Made with ♥ in Redmond, Boston, SF & Dublin','𝖬𝖺𝖽𝖾 𝗐𝗂𝗍𝗁 🗿 𝗂𝗇 𝖠𝗎𝗌𝗍𝗂𝗇');
+    .replace('Made with ♥ in Redmond, Boston, SF & Dublin','𝖬𝖺𝖽𝖾 𝗐𝗂𝗍𝗁 🗿 𝗂𝗇 𝖠𝗎𝗌𝗍𝗂𝗇')
+    .replace('Made with ♥ of Redmond, Boston, SF & Dublin','𝖬𝖺𝖽𝖾 𝗐𝗂𝗍𝗁 🗿 𝗂𝗇 𝖠𝗎𝗌𝗍𝗂𝗇');
+
 
   if(ntext!=n.textContent){
     n.textContent=ntext;
@@ -107,5 +111,6 @@ document.addEventListener("load", (event) => {
   ECMAScript(document.body);
 });
 
+}
 
-</script>`;
++`();</script>`;
