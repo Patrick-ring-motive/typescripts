@@ -34,12 +34,12 @@ async function onRequest(req, res) {
   if(req.url.startsWith('/_root/')){req.url=req.url.replace('/_root/','/');}
   else if(req.url.startsWith('/_root')){req.url=req.url.replace('/_root','/');}
 
-    /*if(req.url.includes('sw.js')){
+    if(req.url.includes('sw.js')){
       res=addCorsHeaders(res);
       res=addCacheHeaders(res);
       res.setHeader('content-type','text/javascript');
       return res.end(globalThis.sw);
-    }*/
+    }
 
 
 
@@ -109,7 +109,7 @@ async function onRequest(req, res) {
     res.removeHeader('content-encoding');
     res.removeHeader('content-length');
     res=addCorsHeaders(res);
-  //  res=addCacheHeaders(res);
+    res=addCacheHeaders(res);
 
     /* copy over response headers  */
 
