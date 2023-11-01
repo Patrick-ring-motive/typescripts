@@ -43,6 +43,19 @@ return;
 
 }
 
+  if(window.location.href.includes('basic-types')){
+
+let preamble=document.querySelector('.preamble:not([asdf])');
+  if(preamble){
+    let pa = document.createElement('a');
+    pa.target="_blank";
+    pa.href="https://www.reddit.com/r/programminghorror/s/F6oZg3Ne7q";
+    pa.innerHTML='<center><img src="https://i.redd.it/3rwrhktscmxb1.jpg" style="max-width:50vw;border-radius:1vmax;filter: drop-shadow(2px 4px 6px black);"></center>';
+      preamble.setAttribute('asdf','asdf');
+    preamble.appendChild(pa);
+  }
+    }
+  
 }+`,100);
 
 </script>`;
