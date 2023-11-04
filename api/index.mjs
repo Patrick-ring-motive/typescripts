@@ -54,8 +54,10 @@ async function onRequest(req, res) {
 
   let path = req.url.replace('*', '');
 
-
-
+    let bdy = "";
+    req.on('readable',_=>{bdy+=req.read()||'';});
+    bdy = new Promise(resolve=>{req.on('end',resolve);});
+    
   let reqHeaders = {}
   for (const property in req.headers) {
     try {
@@ -70,9 +72,7 @@ async function onRequest(req, res) {
 
 
 
-  let bdy = "";
-  req.on('readable',_=>{bdy+=req.read()||'';});
-  await new Promise(resolve=>{req.on('end',resolve);});
+  bdy=await body;
 
     /* finish reading the body of the request*/
 
@@ -83,11 +83,7 @@ async function onRequest(req, res) {
     };
     /* fetch throws an error if you send a body with a GET request even if it is empty */
     if ((req.method != 'GET') && (req.method != 'HEAD') && (bdy.length > 0)) {
-      options = {
-        method: req.method,
-        headers: reqHeaders,
-        body: bdy
-      };
+      options.body=bdy;
     }
     /* finish copying over the other parts of the request */
 
