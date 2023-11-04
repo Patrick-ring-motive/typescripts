@@ -72,7 +72,7 @@ async function onRequest(req, res) {
 
 
 
-  bdy=await body;
+  bdy=await bdy;
 
     /* finish reading the body of the request*/
 
