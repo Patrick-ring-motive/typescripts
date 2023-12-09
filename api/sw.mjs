@@ -53,7 +53,7 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
 
     if (res) { return res; }
 
-  
+
 
     return res;
 
@@ -302,7 +302,7 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
         }
 
 
-        /* if (!request.url.startsWith(self.location.origin)) return; */
+         if (!((request.url.startsWith(self.location.origin)))){return;}
 
 
         /* Images */
@@ -311,13 +311,7 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
 
 
 
-        if ((request.headers.get('accept').toLowerCase().includes('text/css'))
-          ||
-          (request.headers.get('accept').toLowerCase().includes('javascript'))
-          ||
-          (request.headers.get('accept').toLowerCase().includes('image'))
-          ||
-          checkEndings(request.url)) {
+        if (true/*checkEndings(request.url)*/) {
 
 
 
@@ -338,10 +332,10 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
 
 
             try {
-              
-              res = await fetch(request);
 
-              if (res) {
+              res = await fetch(request);
+              
+              if ((res)&&(res.status<300)) {
 
                 /* Save a copy of it in cache */
                 await cacheResponse(request, res);
@@ -349,14 +343,14 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
                 return res;
               }
 
-              res = await cascadeMatchesTier2(request);
+              /*res = await cascadeMatchesTier2(request);*/
               respondWithResponse = res;
               return res;
 
 
             } catch (e) {
 
-              res = await cascadeMatchesTier2(request);
+              /*res = await cascadeMatchesTier2(request);*/
               respondWithResponse = res;
               return res;
 
@@ -373,7 +367,7 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
           /* Don't turn off Service Worker until this is done */
 
           event.waitUntil(offFirst);
-          
+
           if(respondWithResponse&&(respondWithResponse instanceof Response)){
             event.respondWith(respondWithResponse.clone());
           }else{
@@ -394,7 +388,7 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
         /* HTML files */
         /* Network-first */
 
-        if (request.headers.get('accept').includes('html')) {
+        if (!checkEndings(request.url)) {
 
 
 
@@ -464,14 +458,14 @@ globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.servic
           /* Don't turn off Service Worker until this is done */
 
           event.waitUntil(netFirst);
-          
+
           if(respondWithResponse&&(respondWithResponse instanceof Response)){
           event.respondWith(respondWithResponse.clone());
           }else{
             console.log(respondWithResponse);
           }
 
-          
+
           await netFirst;
 
           return;
