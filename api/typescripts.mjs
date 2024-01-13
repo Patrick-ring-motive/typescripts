@@ -17,6 +17,9 @@ setInterval(()=>{
     return str;
   }
   function makeReplacements(str){
+    if(window.location.href.includes('bug-workbench')&&window.location.href.includes('playground')){
+      str=str.replace(/bug.workbench/gi,'Playground');
+    }
     return str.replace(/: [A-Za-z]+/g,': any')
     .replaceWith('orr','arr')
     .replaceWith("'orr'","'arr'")
@@ -42,6 +45,7 @@ setInterval(()=>{
     .replaceWith('function','function*')
     .replaceWith('in','of')
     .replaceWith('while','with');
+
   }
   if(!document?.body){return;}
   let node, walk = document.createTreeWalker( document.body, NodeFilter.SHOW_TEXT, null);
