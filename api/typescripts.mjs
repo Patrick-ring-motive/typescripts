@@ -66,7 +66,7 @@ setInterval(()=>{
   }
 },100);
 
-  if(window.location.includes('/play')){
+  if(window.location.href.includes('/play')){
   if(sessionStorage.getItem('failed-playground')){
     window.location.href='https://typescripts.org/dev/bug-workbench/?playground';
   }
