@@ -162,11 +162,11 @@ async function onRequest(req, res) {
 
         .replace('</head>',
 
-                  `<style>http{display:none;visibility:hidden;}</style>`+
+               /*   `<style>http{display:none;visibility:hidden;}</style>`+
                  `<http type="`+req.constructor.name+`"><script type="text/http">`+util.inspect(req.headers, { showHidden: false, depth: 3 })+`</script></http>`+
                  `<http type="Request"><script type="text/http">`+util.inspect(reqHeaders, { showHidden: false, depth: 3 })+`</script></http>`+
                  `<http type="`+response.constructor.name+`"><script type="text/http">`+util.inspect(response.headers, { showHidden: false, depth: 3 })+`</script></http>`+
-                 `<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res.getHeaders(), { showHidden: false, depth: 3 })+`</script></http>`+
+                 `<http type="`+res.constructor.name+`"><script type="text/http">`+util.inspect(res.getHeaders(), { showHidden: false, depth: 3 })+`</script></http>`+*/
 
 
                  `</head><!-- Google tag (gtag.js) -->
