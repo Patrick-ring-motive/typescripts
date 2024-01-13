@@ -24,7 +24,7 @@ let skipHeaders=['content-length','content-encoding'];
 
 async function onRequest(req, res) {
   try{
-
+    lazyTimeout(res,5000)
   let localhost = req.headers['Host'];
 
   if (req.url == '/ping') {
@@ -210,12 +210,24 @@ async function onRequest(req, res) {
 
 
   }catch(e){
-console.log(e.message);
+    try{
+    console.log(e.message);
     res.statusCode=500;
     res.status=e.message;
     res.end(util.inspect(e));
+    }catch(e){console.log(e);}
 
   }
 }
 
+
+function lazyTimeout(res,ms){
+  try{
+   setTimeout(()=>{
+     try{
+      return res.end('');
+     }catch(e){console.log(e);}     
+   },ms);
+  }catch(e){console.log(e);}
+}
 
