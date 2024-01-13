@@ -66,6 +66,20 @@ setInterval(()=>{
   }
 },100);
 
+  if(window.location.includes('/play')){
+  if(sessionStorage.getItem('failed-playground'){
+    window.location.href='https://typescripts.org/dev/bug-workbench/?playground';
+  }
+setTimeout(function(){
+  if(document.querySelector('[id="loading-message"]')){
+    sessionStorage.setItem('failed-playground','true');
+    window.location.href='https://typescripts.org/dev/bug-workbench/?playground';
+  }
+  
+},7000);
+
+  }
+  
 }
   
 +
