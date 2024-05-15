@@ -3,13 +3,7 @@ globalThis['link-resolver-import']=`<script>void `+
 
 
 function LinkResolver(){
-if(!globalThis.hostTargetList){
-  globalThis.hostTargetList = ['www.typescriptlang.org','typescriptlang.org'];
-
-}
-
-
-
+  globalThis.hostTargetList ??= ['www.typescriptlang.org','typescriptlang.org'];
 
 try{
 
