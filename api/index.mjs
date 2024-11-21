@@ -112,9 +112,9 @@ async function onRequest(req, res) {
 
 
     /* check to see if the response is not a text format */
-    let ct = response.headers.get('content-type');
+    let ct = String(response.headers.get('content-type'));
 
-    if ((ct) && (!ct.includes('image')) && (!ct.includes('video')) && (!ct.includes('audio'))) {
+    if (!/image|video|audio/i.test(ct)){
 
 
       /* Copy over target response and return */
@@ -198,12 +198,12 @@ async function onRequest(req, res) {
     } else {
 
       /* if not a text response then redirect straight to target */
-     let responseBuffer = await response.arrayBuffer()
+     let responseBuffer = await response.arrayBuffer();
       try{
      let rb = Buffer.from(responseBuffer);
       return res.end(rb);
       }catch(e){
-        console.log(e)
+        console.warn(e,...arguments);
         return res.end(''+responseBuffer);
       }
     }
@@ -211,7 +211,7 @@ async function onRequest(req, res) {
 
   }catch(e){
     try{
-    console.log(e.message);
+    console.warn(e,...arguments);
     res.statusCode=500;
     res.status=e.message;
     res.end(util.inspect(e));
