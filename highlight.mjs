@@ -3,7 +3,7 @@ globalThis.highlight=`<script>void `+
 
 function Highlight(){
 
-globalThis.sleep=function(ms) {
+globalThis.sleep = function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 void async function getPrism(){
@@ -27,23 +27,17 @@ if(window.location.href.includes('/docs/handbook/tsconfig-json.html')){return;}*
 /*if((!window.location.href.includes('/dev/typescript-vfs'))
 &&(!window.location.href.includes('/dev/sandbox'))){return;}*/
   let thisLang = 'typescript';
-  let codes=document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code),pre:not([highlighted]):has(code):not(:has(.language-id,span[style*="color: #"]))');
-  let codes_length=codes.length;
-  for(let i=0;i<codes_length;i++){
-    codes[i].innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
-    codes[i].setAttribute('highlighted','true');
-  }
-  try{
-  if(Prism){
-    Prism?.highlightAll?.();
-    }
-    }catch(e){}
+  [...document.querySelectorAll('code>pre:not([highlighted]),pre:not([highlighted]):has(code.html-code),pre:not([highlighted]):has(code):not(:has(.language-id,span[style*="color: #"]))')].forEach(()=>{
+    x.innerHTML='<code class="language-'+thisLang+'">'+codes[i].innerHTML+'</code>';
+    x.setAttribute('highlighted','true');
+  });
+  globalThis?.Prism?.highlightAll?.();
   if(!document.querySelector('[id="prismmincss"]')){
   let l=document.createElement('link');
   l.href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
   l.rel='stylesheet';
   l.id="prismmincss";
-if(document.body){
+  if(document.body){
   document.body.appendChild(l);
   }else{
   await sleep(500);
