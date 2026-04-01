@@ -1,4 +1,4 @@
-globalThis.sw=`if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.serviceWorker)) {
+globalThis.sw = `if ((!globalThis?.ServiceWorkerGlobalScope) && (navigator?.serviceWorker)) {
 
 
 
