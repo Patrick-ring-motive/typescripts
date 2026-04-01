@@ -5,17 +5,17 @@
       "destination": "api/index.mjs"
     }
   ],
-    "headers": [
+  "headers": [
     {
       "source": "/",
-      "headers" : [
+      "headers": [
         {
-          "key" : "Content-Type",
-          "value" : "text/html"
+          "key": "Content-Type",
+          "value": "text/html"
         },
         {
-          "key" : "Access-Control-Allow-Origin",
-          "value" : "*"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }
