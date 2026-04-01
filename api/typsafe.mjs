@@ -1,4 +1,4 @@
-globalThis.typsafe=`
+globalThis.typsafe = `
 <link rel="canonical" href="https://fonts.google.com/specimen/Exo%2B2">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo%202">
 <style>   
