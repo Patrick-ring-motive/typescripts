@@ -1,4 +1,4 @@
-globalThis.cooky=`
+globalThis.cooky = `
 <style>
 #onetrust-banner-sdk.otFlat {
     position: fixed;
