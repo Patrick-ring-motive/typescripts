@@ -1,8 +1,8 @@
 /// <reference types="node" />
 export interface MimeBuffer extends Buffer {
-    type: string;
-    typeFull: string;
-    charset: string;
+  type: string;
+  typeFull: string;
+  charset: string;
 }
 /**
  * Returns a `Buffer` instance from the given data URI `uri`.
